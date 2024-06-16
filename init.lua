@@ -25,10 +25,12 @@ require("keymaps")
 require("options")
 require("autocmds")
 
--- Set up lazy, and load my `lua/custom/plugins/` folder
 require("lazy").setup({
-  -- loads all plugins in plugins/
-  spec = { { import = "plugins" }, },
+  -- loads all plugin under plugins/
+  spec = {
+    { import = "plugins" },
+  },
+
   -- plugins are not lazy loaded by default
   defaults = { lazy = false, },
   change_detection = { nofity = false, },

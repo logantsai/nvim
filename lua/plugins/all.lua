@@ -25,7 +25,6 @@ return {
   {
     "echasnovski/mini.nvim",
     config = function()
-      require("mini.trailspace").setup({}) -- highlight and remove trailing spaces
       require("mini.indentscope").setup({})
       require("mini.tabline").setup({})
 
@@ -76,5 +75,16 @@ return {
     opts = {},
   },
 
+  {
+    "ntpeters/vim-better-whitespace",
+    init = function()
+      vim.g.better_whitespace_enabled = true
+      vim.g.better_whitespace_ctermcolor = 'white'
+      vim.g.better_whitespace_guicolor = 'white'
+      -- vim.g.better_whitespace_guicolor = '#cc241d' -- red
+      vim.g.strip_whitespace_on_save = false
+      vim.g.strip_whitespace_confirm = false
+    end,
+  },
 }
 

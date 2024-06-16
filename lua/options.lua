@@ -23,7 +23,7 @@ opt.splitright = true
 -- opt.shada = { "'10", "<0", "s10", "h" }
 
 -- clipobard
-opt.clipboard = "unnamedplus" 
+opt.clipboard = "unnamedplus"
 
 -- Indenting
 opt.expandtab = true    -- uses spaces instead of tab characters
