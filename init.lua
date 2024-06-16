@@ -23,6 +23,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("keymaps")
 require("options")
+require("autocmds")
 
 -- Set up lazy, and load my `lua/custom/plugins/` folder
 require("lazy").setup({
