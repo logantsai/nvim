@@ -21,7 +21,7 @@ return {
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
-    opt = {},
+    opts = {},
     config = true
   },
 
@@ -57,6 +57,12 @@ return {
         map("n", "[c", function() gs.nav_hunk("prev") end, "Prev Hunk")
       end,
     },
+  },
+
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    opts = {},
   },
 
 }
