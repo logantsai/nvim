@@ -60,6 +60,14 @@ return {
     end,
   },
 
+  -- outline
+  {
+    "preservim/tagbar",
+    keys = {
+      { "<leader>tt", "<cmd>TagbarToggle<cr>", desc = "TagbarToggle" },
+    },
+  },
+
   -- git integrate
 
   {
