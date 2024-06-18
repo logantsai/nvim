@@ -7,9 +7,17 @@ return {
     end,
   },
 
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000,
+  {
+    "catppuccin/nvim", name = "catppuccin", priority = 1000,
     init = function()
       vim.cmd.colorscheme "catppuccin-mocha"
+    end,
+  },
+
+  {
+    "projekt0n/github-nvim-theme", lazy = false, priority = 1000, opts = {},
+    config = function()
+      require('github-theme').setup({})
     end,
   },
 
@@ -134,6 +142,10 @@ return {
     'nvim-telescope/telescope.nvim', tag = '0.1.6',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function ()
+      require('telescope').setup{
+        pickers = { colorscheme = { enable_preview = true } },
+      }
+
       local map = vim.keymap.set
       map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
       map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
