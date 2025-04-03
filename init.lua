@@ -3,10 +3,16 @@
 --
 -- Primarily just download and execute lazy.nvim
 --]]
+
+-- leader!!!
 vim.g.mapleader = " "
 
+-- Define the path where lazy.nvim will be installed
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+-- Check if lazy.nvim is already installed
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  -- If not installed, clone the lazy.nvim repository
+  -- Using --filter=blob:none for faster cloning by excluding blob objects
   vim.fn.system({
     "git",
     "clone",
