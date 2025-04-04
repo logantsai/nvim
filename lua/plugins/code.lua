@@ -34,7 +34,7 @@ return {
                                   --   first DB is "primary" and others are "secondary"
                                   --   primary DB is used for build and project_rooter
         -- cscope executable
-        exec = "gtags-cscope", -- "cscope" or "gtags-cscope"
+        exec = "cscope", -- "cscope" or "gtags-cscope"
         -- choose your fav picker
         picker = "telescope", -- "quickfix", "telescope", "fzf-lua", "mini-pick" or "snacks"
         -- size of quickfix window
