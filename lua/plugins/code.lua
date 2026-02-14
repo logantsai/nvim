@@ -7,7 +7,7 @@ return {
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-          ensure_installed = { "c", "lua", "vim", "vimdoc", "html", "cmake", "bash", "bitbake", "devicetree" },
+          ensure_installed = { "c", "lua", "vim", "vimdoc", "html", "cmake", "bash", "bitbake", "devicetree", "cpp" },
           sync_install = false,
           highlight = { enable = true },
           indent = { enable = false },
@@ -60,6 +60,17 @@ return {
         tree_hl = true, -- toggle tree highlighting
       }
     },
+  },
+
+  {
+    "danymat/neogen",
+    init = function()
+      local opts = { noremap = true, silent = true }
+      vim.api.nvim_set_keymap("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", opts)
+    end,
+    config = true,
+    -- Uncomment next line if you want to follow only stable versions
+    -- version = "*"
   },
 }
 

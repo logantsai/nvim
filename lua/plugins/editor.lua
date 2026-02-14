@@ -20,12 +20,21 @@ return {
       require("mini.indentscope").setup({})
       require("mini.tabline").setup({})
       require("mini.cursorword").setup({})
+      require("mini.files").setup({
+        mappings = {
+          go_in       = '<Right>',
+          go_in_plus = '',
+          go_out      = '<Left>',
+          go_out_plus = '',
+        }
+      })
 
       local function map(mode, l, r, desc)
         vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
       end
-      map('n', ']b', '<Cmd>tabNext<CR>', "Next Tab")
-      map('n', '[b', '<Cmd>tabprevious<CR>', "Prev Tab")
+      -- map('n', ']b', '<Cmd>tabNext<CR>', "Next Tab")
+      -- map('n', '[b', '<Cmd>tabprevious<CR>', "Prev Tab")
+      map('n', '<leader>e', '<Cmd>lua MiniFiles.open()<CR>', "File explorer")
     end,
   },
 

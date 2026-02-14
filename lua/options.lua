@@ -26,7 +26,7 @@ opt.splitright = true
 opt.clipboard = "unnamedplus"
 
 -- Indenting
-opt.expandtab = true    -- uses spaces instead of tab characters
+opt.expandtab = false    -- uses spaces instead of tab characters
 opt.shiftwidth = 4      -- the number of spaces used for indentation operations
 opt.smartindent = true  -- makes the Tab key behave differently at the beginning of a line
 opt.tabstop = 4         -- the width of a tab character displayed

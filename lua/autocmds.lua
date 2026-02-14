@@ -3,7 +3,6 @@ local function trim_tail_sp()
   -- Use Neovim API to perform a global substitute command to remove trailing spaces
   vim.api.nvim_command("%s/\\s\\+$//e")
 end
-
 -- Register the function as a user command for convenience
 vim.api.nvim_create_user_command("TrimTailSp", trim_tail_sp, {})
 
@@ -29,3 +28,20 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
     vim.cmd [[match ExtraWhitespace /\s\+$/]]
   end
 })
+
+-- Function to toggle between tabs and spaces for indentation
+local function toggle_tabs()
+  if vim.o.expandtab then
+    vim.o.expandtab = false
+    vim.o.shiftwidth = 4
+    vim.o.tabstop = 4
+    vim.notify("Switched to Tabs", vim.log.levels.INFO)
+  else
+    vim.o.expandtab = true
+    vim.o.shiftwidth = 4
+    vim.o.tabstop = 4
+    vim.notify("Switched to Spaces", vim.log.levels.INFO)
+  end
+end
+-- Register the function as a user command for convenience
+vim.api.nvim_create_user_command("ToggleTabs", toggle_tabs, {})

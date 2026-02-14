@@ -20,4 +20,8 @@ map('n', '<C-k>', ':m .-2<CR>==', { noremap = true, silent = true })
 map('v', '<C-j>', ':m \'>+1<CR>gv=gv', { noremap = true, silent = true })
 map('v', '<C-k>', ':m \'<-2<CR>gv=gv', { noremap = true, silent = true })
 
-
+-- Buffer Navigation
+map('n', '<S-Right>', ':bnext<CR>', { desc = "Next buffer" })
+map('n', '<S-Left>', ':bprevious<CR>', { desc = "Previous buffer" })
+map('n', '<leader>bd', ':bdelete<CR>', { desc = "Delete buffer" })
+map('n', '<leader>bdo', ':%bd|e#|bd#<CR>', { desc = "Close other buffers" })
